@@ -1,5 +1,5 @@
 ---
-title: "Potato"
+# title: "Potato"
 author: "Kelvin Llanos"
 format: html
 editor_options: 
@@ -27,11 +27,11 @@ library(googlesheets4)
 ## Importar datos
 
 ```{r}
-url <- ""
+#url <- ""
   
-  gs <- as_sheets_id(url)
-fb <- range_read(gs,"fb")
-str(fb)
+  #gs <- as_sheets_id(url)
+#fb <- range_read(gs,"fb")
+#str(fb)
 ```
 
 ## Modelo estadistico
@@ -44,7 +44,8 @@ anova(modelo)
 plot(modelo)
 
 ```
-
+plot #
+print(plot)  #ver codigo
 ## Comparacion de medias 
 
 ```{r}
@@ -57,15 +58,19 @@ mc
 str(mc)
 ```
 
+
 ```{r}
+
 library(emmeans)
 library(multcomp)
 library(tidyverse)
+library(inti)
 
-mc <- emmeans(modelo. ~ riego | geno) %>%
-  cld(Letters = letters, reversed = T)
+mc <- emmeans(modelo, ~ riego | geno)
+mc_cld <- mc %>%
+  cld(Letters = letters, reversed = TRUE)
 
-mc
+mc_cld
 ```
 
 ## Grafico
@@ -73,9 +78,9 @@ mc
 ```{r}
 library(inti)
 
-plot_smr(data = mc
+plot_smr(data = mc_cld
          , type = "bar"
-         , x = "geno
+         , x = "geno"
          , y = "emmean"
          , group = "riego"
          , sig = ".group"
@@ -84,9 +89,9 @@ plot_smr(data = mc
 ```
 
 ```{r}
-ggplot(mc, aes(x = geno, y = emmean, fi11 = riego)) + 
+ggplot(mc_cld, aes(x = geno, y = emmean, fi11 = riego)) + 
   geom_bar(stat = "identity") +
-  theme_minima() +
+  theme_minimal() +
   labs(title = "Grafico de barras", x = "Categoria", y = "valores")
 ```
 
