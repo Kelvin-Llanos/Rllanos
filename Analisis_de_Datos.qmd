@@ -52,9 +52,9 @@ plot(modelo)
 ## Comparacion de medias 
 
 ```{r}
+
 library(agricolae)
-mc <- agricolae::duncan.test(y= modelo
-                             ,trt = c("riego","geno"))
+mc <- agricolae::duncan.test(y = modelo,trt = c("riego","geno"))
 
 mc
 
