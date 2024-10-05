@@ -48,8 +48,7 @@ anova(modelo)
 plot(modelo)
 
 ```
-plot #
-print(plot)  #ver codigo
+
 ## Comparacion de medias 
 
 ```{r}
