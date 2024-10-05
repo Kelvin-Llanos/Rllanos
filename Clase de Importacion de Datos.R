@@ -1,4 +1,5 @@
+
 library(readxl)
-fb <- read_excel("LA MOLINA 2014 POTATO WUE (FB).xlsx", 
-                                            sheet = "fb")
-View(fb)
+Importacion_de_datos <- read_excel("Importacion de datos.xlsx", 
+                                   sheet = "fb")
+View(Importacion_de_datos)
