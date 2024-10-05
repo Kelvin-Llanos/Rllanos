@@ -5,7 +5,7 @@ format: html
 editor_options: 
   chunk_output_type: console
 ---
-
+```{r}
 library(readxl)
 fb<- read_excel("LA MOLINA 2014 POTATO WUE (FB).xlsx", 
     sheet = "fb", col_types = c("text", "text", 
@@ -16,6 +16,10 @@ fb<- read_excel("LA MOLINA 2014 POTATO WUE (FB).xlsx",
         "numeric", "numeric", "numeric"))
 View(fb)
 str(fb)
+
+```
+
+
 
 # Analisis de datos
 
